@@ -2,35 +2,151 @@
 <html>
 <head>
   <title>Browse Products</title>
-</head>
   <style>
-    body{
-      background-color: rgb(0, 255, 110);
-      background-image: linear-gradient(rgb(55, 255, 0), rgb(0, 255, 110));
+    body {
+      background-color: rgb(236, 232, 192);
+      background-image: linear-gradient(rgb(242, 243, 167), rgb(236, 232, 192));
       background-repeat: no-repeat;
-      background-size:contain;
+      background-size: contain;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      display: flex;
+      align-items: flex-start;
+      padding: 20px;
+    }
+    .filters {
+      width: 6.5rem;
+      border: 2px solid #160d0060;
+      background-color: #ca9242;
+      padding: 10px;
+      margin-right: 20px;
+    }
+    .products {
+      width: 75%;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      align-self:top;
+      border-top:#160d0080 2px solid;
+      background-color: #e9dd9c;
+      gap: 20px;
+      padding: 10px;
+    }
+    .product-item {
+      border: 1px solid #160d0046;
+      padding: 10px;
+      width:12rem;
+      text-align: center;
     }
   </style>
+</head>
 <body>
 
-<!--TEST-->
-<center><h1>Customer Login</h1></center>
+<center><h1>Browse Products</h1></center>
 <hr>
-<form action="CustomerLogin" method="post">
-  <table border="2" align="center" cellpadding="5" cellspacing="5">
-    <tr>
-    <td><label for="username"><b>Username</b></label></td>
-    <td><input type="text" placeholder="Enter Username" name="username" required></td>
-    </tr>
-    <tr>
-    <td><label for="password"><b>Password</b></label></td>
-    <td><input type="password" placeholder="Enter Password" name="password" required></td>
-    </tr>
-    <tr>
-    <td><button type="submit">Login</button></td>
-    </tr>
-  </table>
-</form>
+
+<!-- Browsing Section -->
+<div class="container">
+  <!-- Filters Section -->
+  <div class="filters">
+    <center><h3><u>Filters</u></h3></center>
+    <form action="FilterProducts" method="post">
+      <label for="category"><b>Category:</b></label><br>
+      <select name="category" id="category">
+        <option value="all">All</option>
+        <option value="fruits">Fruits</option>
+        <option value="vegetables">Vegetables</option>
+        <option value="dairy">Dairy</option>
+        <option value="bakery">Meat</option>
+        <option value="grain">Grain</option>
+        <option value="bakery">Bakery</option>
+      </select><br><br>
+
+      <label for="price"><b>Price Range:</b></label><br>
+      <input type="radio" name="price" value="low"> Low<br>
+      <input type="radio" name="price" value="medium"> Medium<br>
+      <input type="radio" name="price" value="high"> High<br><br>
+
+      <button type="submit">Apply Filters</button>
+    </form>
+  </div>
+
+  <!-- Products Section -->
+  <div class="products">
+    <div class="product-item">
+      <h3>Apple</h3>
+      <p>Category: Fruits</p>
+      <p>Price: $1.00</p>
+      <p>Size: 1 lb</p>
+    </div>
+    <div class="product-item">
+      <h3>Milk</h3>
+      <p>Category: Dairy</p>
+      <p>Price: $2.50</p>
+      <p>Size: 1 L</p>
+    </div>
+    <div class="product-item">
+      <h3>Bread</h3>
+      <p>Category: Bakery</p>
+      <p>Price: $1.50</p>
+      <p>Size: 500 g</p>
+    </div>
+    <div class="product-item">
+      <h3>Banana</h3>
+      <p>Category: Fruits</p>
+      <p>Price: $0.50</p>
+      <p>Size: 200 g</p>
+    </div>
+    <div class="product-item">
+      <h3>Cheese</h3>
+      <p>Category: Dairy</p>
+      <p>Price: $3.00</p>
+      <p>Size: 300 g</p>
+    </div>
+    <div class="product-item">
+      <h3>Carrot</h3>
+      <p>Category: Vegetables</p>
+      <p>Price: $0.30</p>
+      <p>Size: 100 g</p>
+    </div>
+    <div class="product-item">
+      <h3>Chicken Breast</h3>
+      <p>Category: Meat</p>
+      <p>Price: $5.00</p>
+      <p>Size: 1 kg</p>
+    </div>
+    <div class="product-item">
+      <h3>Yogurt</h3>
+      <p>Category: Dairy</p>
+      <p>Price: $1.20</p>
+      <p>Size: 150 g</p>
+    </div>
+    <div class="product-item">
+      <h3>Orange</h3>
+      <p>Category: Fruits</p>
+      <p>Price: $0.80</p>
+      <p>Size: 250 g</p>
+    </div>
+    <div class="product-item">
+      <h3>Broccoli</h3>
+      <p>Category: Vegetables</p>
+      <p>Price: $1.00</p>
+      <p>Size: 500 g</p>
+    </div>
+    <div class="product-item">
+      <h3>Butter</h3>
+      <p>Category: Dairy</p>
+      <p>Price: $2.00</p>
+      <p>Size: 200 g</p>
+    </div>
+    <div class="product-item">
+      <h3>Grapes</h3>
+      <p>Category: Fruits</p>
+      <p>Price: $2.50</p>
+      <p>Size: 500 g</p>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>
